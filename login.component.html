@@ -1,0 +1,37 @@
+<form class="loginForm">
+  <h3 class="loginTitle">Login</h3>
+  <div class="loginTop">
+    <label class="loginLabel" for="emailID">Email ID : </label>
+    <input
+      class="form-control loginInput"
+      [(ngModel)]="logindetails.emailID"
+      name="emailID"
+      type="email"
+      required
+    />
+    <small class="color-red" *ngIf="loginerrordetails.emailIDloginerror"
+      >Please enter your email ID!</small
+    >
+  </div>
+  <div class="loginBottom">
+    <label class="loginLabel" for="password">Password : </label>
+    <input
+      class="form-control loginInput"
+      [(ngModel)]="logindetails.password"
+      name="password"
+      type="password"
+      required
+    />
+    <small class="color-red" *ngIf="loginerrordetails.passwordloginerror"
+      >Please enter your password!</small
+    >
+  </div>
+  <button
+    [routerLink]="['/admin']"
+    class="loginButton"
+    type="submit"
+    (click)="login()"
+  >
+    Login
+  </button>
+</form>
